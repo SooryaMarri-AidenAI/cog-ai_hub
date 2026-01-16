@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import type { NavItem } from '../types/product'
-import cognizantLogo from '../assets/image.png'
+import cognizantLogo from '../assets/cog_prim_lg_hrz_r_rgb_rev_2022.png'
 
 const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
@@ -31,7 +31,7 @@ const Navbar = () => {
           </div>
         </NavLink>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        {/* <nav className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
             <NavLink
               key={item.path}
@@ -46,7 +46,7 @@ const Navbar = () => {
               {item.label}
             </NavLink>
           ))}
-        </nav>
+        </nav> */}
 
         <button
           type="button"

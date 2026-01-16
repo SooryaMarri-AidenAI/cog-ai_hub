@@ -24,7 +24,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           navigate(product.featurePath)
         }
       }}
-      className={`group relative cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-glass p-6 shadow-glow backdrop-blur-xl before:pointer-events-none before:absolute before:inset-0 before:rounded-3xl before:opacity-70 before:transition before:duration-700 before:content-[''] group-hover:before:opacity-100 ${product.gradient}`}
+      className={`group relative flex h-full flex-col cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-glass p-6 shadow-glow backdrop-blur-xl before:pointer-events-none before:absolute before:inset-0 before:rounded-3xl before:opacity-70 before:transition before:duration-700 before:content-[''] group-hover:before:opacity-100 ${product.gradient}`}
     >
       <div className="pointer-events-none absolute -right-10 top-12 h-28 w-28 rounded-full bg-white/10 blur-2xl transition duration-700 group-hover:bg-white/20" />
       <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
@@ -37,9 +37,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <span className="font-medium uppercase tracking-[0.2em]">AI Product</span>
       </div>
       <h3 className="mt-6 text-2xl font-semibold text-white">{product.name}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-slate-300">{product.description}</p>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-300">{product.description}</p>
       <Link
         to={product.demoPath}
+        target="_blank"
         onClick={(event) => event.stopPropagation()}
         className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
       >
