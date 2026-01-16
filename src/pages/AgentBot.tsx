@@ -1,5 +1,6 @@
 import { Bot, Database, Sparkles, Zap } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
+import WaveDivider from '../components/WaveDivider'
 import type { FeatureItem } from '../types/product'
 
 const features: FeatureItem[] = [
@@ -53,6 +54,8 @@ const AgentBot = () => {
         })}
       </section>
 
+      <WaveDivider />
+
       <section className="mt-14">
         <AnimatedSection>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
@@ -62,7 +65,7 @@ const AgentBot = () => {
                   <Bot className="h-5 w-5 text-highlight" />
                 </span>
                 <div>
-                  <p className="text-sm font-semibold">Nova Agent</p>
+                  <p className="text-sm font-semibold">Cognizant AI Hub Agent</p>
                   <p className="text-xs text-slate-400">Real-time dataset intelligence</p>
                 </div>
               </div>

@@ -17,10 +17,12 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/40 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-        <NavLink to="/" className="flex items-center gap-3 text-white">
-          <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl bg-white/10">
-            <img src={cognizantLogo} alt="Cognizant" className="h-7 w-7 object-contain" />
-          </span>
+        <NavLink to="/" className="flex items-center gap-4 text-white">
+          <img
+            src={cognizantLogo}
+            alt="Cognizant"
+            className="h-16 w-auto object-contain md:h-20"
+          />
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">
               Cognizant

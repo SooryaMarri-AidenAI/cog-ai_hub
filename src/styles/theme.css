@@ -45,3 +45,50 @@ a {
 .noise-overlay {
   background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2394a3b8' fill-opacity='0.04'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3Ccircle cx='60' cy='30' r='1'/%3E%3Ccircle cx='120' cy='80' r='1'/%3E%3Ccircle cx='30' cy='140' r='1'/%3E%3Ccircle cx='150' cy='150' r='1'/%3E%3C/g%3E%3C/svg%3E");
 }
+
+.hero-waves {
+  position: absolute;
+  inset: -140px 0 auto 0;
+  height: 360px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-wave {
+  position: absolute;
+  width: 160%;
+  left: -30%;
+  opacity: 0.55;
+  filter: blur(0.2px);
+  animation: waveDrift 18s ease-in-out infinite;
+}
+
+.hero-wave.secondary {
+  opacity: 0.35;
+  top: 80px;
+  animation: waveDriftReverse 24s ease-in-out infinite;
+}
+
+@keyframes waveDrift {
+  0% {
+    transform: translateX(0%) translateY(0%);
+  }
+  50% {
+    transform: translateX(6%) translateY(12px);
+  }
+  100% {
+    transform: translateX(0%) translateY(0%);
+  }
+}
+
+@keyframes waveDriftReverse {
+  0% {
+    transform: translateX(0%) translateY(0%);
+  }
+  50% {
+    transform: translateX(-6%) translateY(-8px);
+  }
+  100% {
+    transform: translateX(0%) translateY(0%);
+  }
+}

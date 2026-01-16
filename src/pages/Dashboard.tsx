@@ -1,5 +1,6 @@
 import { Activity, BarChart3, Layers, LineChart } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
+import WaveDivider from '../components/WaveDivider'
 import type { FeatureItem } from '../types/product'
 
 const features: FeatureItem[] = [
@@ -52,6 +53,8 @@ const Dashboard = () => {
           )
         })}
       </section>
+
+      <WaveDivider />
 
       <section className="mt-14">
         <AnimatedSection>

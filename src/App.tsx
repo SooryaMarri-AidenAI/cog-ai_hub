@@ -5,6 +5,8 @@ import Navbar from './components/Navbar'
 import AgentBot from './pages/AgentBot'
 import Dashboard from './pages/Dashboard'
 import Home from './pages/Home'
+import ProductDemo from './pages/ProductDemo'
+import ProductFeatures from './pages/ProductFeatures'
 import TextToVideo from './pages/TextToVideo'
 
 const App = () => {
@@ -16,16 +18,18 @@ const App = () => {
       <AnimatePresence mode="wait">
         <motion.div
           key={location.pathname}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -16 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           <Routes location={location}>
             <Route path="/" element={<Home />} />
             <Route path="/agent-bot" element={<AgentBot />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/text-to-video" element={<TextToVideo />} />
+            <Route path="/products/:productId/features" element={<ProductFeatures />} />
+            <Route path="/products/:productId/demo" element={<ProductDemo />} />
           </Routes>
         </motion.div>
       </AnimatePresence>

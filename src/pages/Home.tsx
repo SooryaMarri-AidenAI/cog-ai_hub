@@ -1,42 +1,11 @@
-import { Bot, BarChart3, Clapperboard } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
 import ProductCard from '../components/ProductCard'
-import type { ProductMeta } from '../types/product'
-
-const products: ProductMeta[] = [
-  {
-    id: 'agent-bot',
-    name: 'AI Agent Bot',
-    description:
-      'Conversational intelligence that interrogates data, surfaces insights, and triggers workflows.',
-    path: '/agent-bot',
-    icon: Bot,
-    gradient: 'before:bg-gradient-to-br before:from-cyan-500/10 before:via-transparent before:to-transparent',
-    cta: 'Launch Product',
-  },
-  {
-    id: 'dashboard',
-    name: 'Interactive Dashboard',
-    description:
-      'Enterprise analytics studio with drill-down charts, live KPI streams, and team-wide clarity.',
-    path: '/dashboard',
-    icon: BarChart3,
-    gradient: 'before:bg-gradient-to-br before:from-violet-500/10 before:via-transparent before:to-transparent',
-    cta: 'Launch Product',
-  },
-  {
-    id: 'text-to-video',
-    name: 'Text-to-Video Studio',
-    description:
-      'Prompt-to-cinematic generation with scene controls, timeline previews, and rapid iteration.',
-    path: '/text-to-video',
-    icon: Clapperboard,
-    gradient: 'before:bg-gradient-to-br before:from-sky-500/10 before:via-transparent before:to-transparent',
-    cta: 'Launch Product',
-  },
-]
+import WaveDivider from '../components/WaveDivider'
+import { productDetails } from '../products'
 
 const Home = () => {
+  const products = Object.values(productDetails).map((detail) => detail.meta)
+
   return (
     <main className="relative overflow-hidden pb-20">
       <div className="absolute inset-0 -z-10">
@@ -44,7 +13,40 @@ const Home = () => {
         <div className="noise-overlay absolute inset-0 opacity-60" />
       </div>
 
-      <section className="mx-auto w-full max-w-6xl px-6 pb-20 pt-16 md:pt-24">
+      <section className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-16 md:pt-24">
+        <div className="hero-waves">
+          <svg
+            className="hero-wave"
+            viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+            role="presentation"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,96L80,117.3C160,139,320,181,480,186.7C640,192,800,160,960,144C1120,128,1280,128,1360,128L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+              fill="url(#waveGradient)"
+            />
+            <defs>
+              <linearGradient id="waveGradient" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stopColor="rgba(92, 198, 255, 0.35)" />
+                <stop offset="60%" stopColor="rgba(155, 107, 255, 0.1)" />
+                <stop offset="100%" stopColor="rgba(92, 198, 255, 0.05)" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <svg
+            className="hero-wave secondary"
+            viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+            role="presentation"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,128L120,138.7C240,149,480,171,720,154.7C960,139,1200,85,1320,58.7L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
+              fill="rgba(92, 198, 255, 0.15)"
+            />
+          </svg>
+        </div>
         <AnimatedSection>
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-slate-300">
             Unified AI Product Hub
@@ -67,15 +69,32 @@ const Home = () => {
         </AnimatedSection>
       </section>
 
+      <WaveDivider />
+
       <section className="mx-auto grid w-full max-w-6xl gap-6 px-6 md:grid-cols-3">
         {products.map((product, index) => (
           <AnimatedSection key={product.id} delay={0.1 * index}>
             <ProductCard product={product} />
           </AnimatedSection>
         ))}
+        <AnimatedSection delay={0.3}>
+          <div className="relative overflow-hidden rounded-3xl border border-dashed border-white/15 bg-white/5 p-6 text-slate-300">
+            <div className="pointer-events-none absolute -left-10 top-10 h-28 w-28 rounded-full bg-white/5 blur-2xl" />
+            <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Next release</p>
+            <h3 className="mt-4 text-2xl font-semibold text-white">
+              More Products Coming Soon
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate-300">
+              We are building the next wave of AI tooling for enterprise teams. Stay tuned for new
+              launches across automation, research, and creative ops.
+            </p>
+          </div>
+        </AnimatedSection>
       </section>
 
-      <section className="mx-auto mt-20 w-full max-w-6xl px-6">
+      <WaveDivider flip />
+
+      <section className="mx-auto mt-16 w-full max-w-6xl px-6">
         <AnimatedSection>
           <div className="grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-8 md:grid-cols-3">
             {[
