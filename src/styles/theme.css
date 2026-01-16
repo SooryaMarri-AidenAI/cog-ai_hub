@@ -1,0 +1,47 @@
+:root {
+  color-scheme: dark;
+  --color-base: #0b0f17;
+  --color-surface: #111a2b;
+  --color-glass: rgba(15, 23, 42, 0.6);
+  --color-accent: #5cc6ff;
+  --color-highlight: #9b6bff;
+  --color-text: #e5e7eb;
+  --color-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  background: radial-gradient(circle at top, rgba(92, 198, 255, 0.12), transparent 50%),
+    linear-gradient(180deg, #070a12 0%, #0b1224 55%, #0b0f17 100%);
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.glow-ring {
+  position: absolute;
+  inset: -120px auto auto -180px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(92, 198, 255, 0.35), transparent 60%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2394a3b8' fill-opacity='0.04'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3Ccircle cx='60' cy='30' r='1'/%3E%3Ccircle cx='120' cy='80' r='1'/%3E%3Ccircle cx='30' cy='140' r='1'/%3E%3Ccircle cx='150' cy='150' r='1'/%3E%3C/g%3E%3C/svg%3E");
+}
